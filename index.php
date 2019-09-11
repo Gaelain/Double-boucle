@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
         <title>PHP Random</title>
     </head>
     <body>
@@ -45,7 +46,7 @@
         
         <?php
             $tabNombre = array();
-            for ($i = 0; $i < 100; $i++)
+            for ($i = 0; $i <= 100; $i++)
             {
                 $tabNombre[$i] = 0;
             }
@@ -59,7 +60,15 @@
             for ($i = 0; $i < 100; $i++)
             {
         ?>
-        <p>La valeur <?php echo $i; ?> est présente <?php echo $tabNombre[$i]; ?> fois.</p>
+        <p <?php if ($tabNombre[$i] >= 2)
+        { 
+        ?>
+            id = "rouge"
+        <?php 
+        }
+        ?>
+        >
+        La valeur <?php echo $i; ?> est présente <?php echo $tabNombre[$i]; ?> fois.</p>
         <?php
             }
         ?>
